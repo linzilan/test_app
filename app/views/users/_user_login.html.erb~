@@ -1,0 +1,12 @@
+<h2>Please Loginfirst </h2>
+<%= form_tag :action => :login do %>
+
+  <%= label_tag :user, 'Username: ' %><br>
+  <%= text_field_tag :user %><br>
+
+  <%= label_tag :password, 'Password: ' %><br>
+  <%= password_field_tag :password %><br>
+
+  <%= submit_tag 'Login' %>
+
+<% end %>

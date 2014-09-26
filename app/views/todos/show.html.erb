@@ -1,0 +1,16 @@
+<h1>Welcome <%=@email%> todo list</h1>
+
+<%= link_to "Sign Out", :controller=>:users, :action=>:sign_out %>
+<h1>To do list</h1>
+<button id="add">Add a todo</button>
+ <div id="add_form", style="display: none; ">
+ <%=render partial: "add_form" %>
+ </div>
+ <div id="todo_table">
+ <%= render partial: "todo_table" %>
+ </div>
+<script>
+$("#add").click(function(){
+  $("#add_form").toggle();
+});
+</script>

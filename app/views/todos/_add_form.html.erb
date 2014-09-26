@@ -1,0 +1,10 @@
+<h2>Add a todo to your list </h2>
+<%= form_tag :action => :add_todo do %>
+
+  <%= label_tag :description, 'Description: ' %><br>
+  <%= text_field_tag :description %><br>
+
+
+  <%= submit_tag 'Submit' %>
+
+<% end %>

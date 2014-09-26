@@ -1,0 +1,45 @@
+<div id="todo_table">
+<% if @todos!=nil %>
+       <div id="edit_form">
+       </div>
+<table align="center">
+  <tr>
+     <% if @asc=="false"%>
+        <th><%=link_to "Complete?", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>true%></th>
+    <%else %>
+        <th><%=link_to "Complete?", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>false%></th>
+    <% end %>
+    
+    <% if @asc=="false"%>
+       <th><%=link_to "ID", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>true%></th>
+     <%else %>
+       <th><%=link_to "ID", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>false%></th>
+     <% end %>
+     
+     <% if @asc=="false"%>
+        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description",:asc=>true%></th>
+     <%else %>
+        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description", :asc=>false%>Δ</th>
+     <%end %>
+        <th>Edit</th>
+    
+  </tr>
+  
+  <% @todos.each do |todo| %>
+    <tr>
+
+       <% if todo["is_complete"].to_s=="true"%>
+      <td>yes</td>
+      <% else %>
+       <td></td>
+       <% end%>
+      <td><%= todo["id"]%></td>
+      <td><%=link_to todo["description"], :action=>"show_detail"%></td>
+      <td><%=link_to "edit", :remote=>"true",:action=>:edit, :id=>todo["id"], :description=>todo["description"], :is_complete=>todo["is_complete"] %>
+
+    </tr>
+  <% end %>
+</table>
+<%end %>
+</div>
+

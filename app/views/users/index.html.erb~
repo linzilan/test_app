@@ -1,0 +1,25 @@
+<h1 id="welcome">Welcome</h1> 
+<table  align="center">
+<ul>
+<tr>
+<td>
+
+<div id="user_login">
+<%=render partial: "user_login"%>
+</div>
+</td>
+Not a user?
+<button id="join">Join</button>
+<td>
+<div id="register", style="display: none;">
+<%=render partial:"user_register" %>
+</div>
+</td>
+</tr>
+</table>
+<script>
+$("#join").click(function(){
+  $("#register").toggle();
+});
+</script>
+<h4>Hello World!</h3>

@@ -1,0 +1,1 @@
+  {$('#todo_table').replaceWith('<%= escape_javascript(render(:partial => 'todo_table') %>');}

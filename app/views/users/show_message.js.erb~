@@ -1,0 +1,1 @@
+  {$('#error_message').replaceWith('<%= escape_javascript(render(:partial => 'todo_table')) %>');}

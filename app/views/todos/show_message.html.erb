@@ -1,0 +1,9 @@
+<h2 id="pricing">
+<%if @after_parse["error"]==nil %>
+Your todo upadate with id:	<%=@after_parse["id"]%>
+has been made succesfully.
+Click
+<%=link_to "here", :controller=>:todos, :action=>:show%>
+to go back.
+<%end %>
+</h2>

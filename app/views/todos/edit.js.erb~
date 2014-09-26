@@ -1,0 +1,4 @@
+  if ($('#a_form').length == 0)
+  {$('#edit_form').replaceWith('<%= escape_javascript(render(:partial => 'edit_form', :todo_id => @todo_id)) %>');}
+  else
+  {$('#a_form').replaceWith("<h1>aa</h1>")}

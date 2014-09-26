@@ -1,0 +1,13 @@
+<div id="edit_form", style="align='center;'">
+<%= form_tag :action => :create do %>
+
+  <%= label_tag :description, 'Description: ' %><br>
+  <%= text_field_tag :description, @description%><br>
+
+<%= hidden_field_tag(:todo_id,@todo_id) %>
+is completed?	
+<%= select_tag "is_complete", options_for_select([ "true", "false" ], @is_complete)%>
+  <%= submit_tag 'Update' %>
+
+<% end %>
+</div>
