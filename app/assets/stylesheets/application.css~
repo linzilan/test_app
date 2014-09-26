@@ -30,7 +30,7 @@ button {
     content: "";
 }
 .clearfix:after { clear: both }
-html { background-color: white }
+html { background-color: #DCDCDC}
 body {
     color: black;
     font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
@@ -1794,13 +1794,14 @@ body>#login #dont_have_an_account a {
     padding-bottom: 2px;
 }
 body>#login #dont_have_an_account a:hover { border-bottom: 2px solid #f90 }
-table{align="center"; border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}
+table{ border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}
 table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
 table td,
 table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}
 table td:first-child,table th:first-child{border-left-width:0}
 table thead{background:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}
-table td{background-color:transparent}
+table td{background-color:ghostwhite}
+table th{background-color:white}
 table-odd td{background-color:#f2f2f2}
 table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}table-bordered td{border-bottom:1px solid #cbcbcb}table-bordered tbody>tr:last-child td,table-horizontal tbody>tr:last-child td{border-bottom-width:0}table-horizontal td,table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}table-horizontal tbody>tr:last-child td{border-bottom-width:0}
 

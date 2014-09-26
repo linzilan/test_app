@@ -9,8 +9,10 @@
  <div id="todo_table">
  <%= render partial: "todo_table" %>
  </div>
+ <h4>Created by Zilan,Lin</h4>
 <script>
 $("#add").click(function(){
   $("#add_form").toggle();
 });
 </script>
+

@@ -1,9 +1,12 @@
 
+<div class="avatar">
+ <img src="http://cdn.ialireza.me/avatar.png">
+</div>
 <h2>Sign up</h2>
 <%= form_tag :action => :create do %>
 
-  <%= label_tag :user, 'Username: ' %><br>
-  <%= text_field_tag :user %><br>
+  <%= label_tag :user, 'Email: ' %><br>
+  <%= text_field_tag :user, "youremail@email.com" %><br>
 
   <%= label_tag :password, 'Password: ' %><br>
   <%= password_field_tag :password %><br>

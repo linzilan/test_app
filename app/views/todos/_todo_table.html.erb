@@ -1,5 +1,5 @@
 <div id="todo_table">
-<% if @todos!=nil %>
+<% if @todos.size>0 %>
        <div id="edit_form">
        </div>
 <table align="center">
@@ -34,7 +34,7 @@
        <td></td>
        <% end%>
       <td><%= todo["id"]%></td>
-      <td><%=link_to todo["description"], :action=>"show_detail"%></td>
+      <td><%= todo["description"]%></td>
       <td><%=link_to "edit", :remote=>"true",:action=>:edit, :id=>todo["id"], :description=>todo["description"], :is_complete=>todo["is_complete"] %>
 
     </tr>

@@ -17,19 +17,25 @@ class TodosController < ApplicationController
          Rails.logger.info @todos.inspect
          
    end   
-  
-   def show_detail
-   end   
+     
    
    def order_show
       @asc=params[:asc]
       Rails.logger.info @asc
       @all_todos=params[:all_todos]
       order_by_what=params[:order_by_what]
-      if @asc=="false"
+      if order_by_what=="id"
+         if @asc=="false"
+         @todos=@all_todos.sort_by{|a| -a[order_by_what].to_i}
+         else 
+         @todos=@all_todos.sort_by{|a| a[order_by_what].to_i}
+      end
+      else
+         if @asc=="false"
          @todos=@all_todos.sort{|a,b| b[order_by_what].to_s <=> a[order_by_what].to_s}
-      else 
+         else 
          @todos=@all_todos.sort{|a,b| a[order_by_what].to_s <=> b[order_by_what].to_s}
+      end
       end
       Rails.logger.info @todos
       respond_to do |format|

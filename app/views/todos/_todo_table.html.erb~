@@ -1,5 +1,5 @@
 <div id="todo_table">
-<% if @todos!=nil %>
+<% if @todos!="" %>
        <div id="edit_form">
        </div>
 <table align="center">
@@ -19,7 +19,7 @@
      <% if @asc=="false"%>
         <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description",:asc=>true%></th>
      <%else %>
-        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description", :asc=>false%>Δ</th>
+        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description", :asc=>false%></th>
      <%end %>
         <th>Edit</th>
     
@@ -34,7 +34,7 @@
        <td></td>
        <% end%>
       <td><%= todo["id"]%></td>
-      <td><%=link_to todo["description"], :action=>"show_detail"%></td>
+      <td><%= todo["description"]%></td>
       <td><%=link_to "edit", :remote=>"true",:action=>:edit, :id=>todo["id"], :description=>todo["description"], :is_complete=>todo["is_complete"] %>
 
     </tr>

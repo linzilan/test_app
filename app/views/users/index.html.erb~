@@ -1,25 +1,28 @@
-<h1 id="welcome">Welcome</h1> 
+<div id="user_login" class="wrap">
+<h1 >Welcome</h1> 
 <table  align="center">
 <ul>
 <tr>
 <td>
 
-<div id="user_login">
 <%=render partial: "user_login"%>
-</div>
 </td>
-Not a user?
-<button id="join">Join</button>
 <td>
+
 <div id="register", style="display: none;">
 <%=render partial:"user_register" %>
 </div>
 </td>
 </tr>
 </table>
+</td>
+Not a user?
+<button id="join">Join</button>
+
 <script>
 $("#join").click(function(){
   $("#register").toggle();
 });
 </script>
-<h4>Hello World!</h3>
+</div>
+<h4>Created by Zilan,Lin</h3>
