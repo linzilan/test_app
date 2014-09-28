@@ -1,36 +1,125 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-  <style>
-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 100%;
-    line-height: 1;
-    font-family: inherit;
+a:link, a:visited { 
+text-shadow: 2px 2px 5px #ff9900;
+color: black;
+	font-size:15px;
+	font-family:Helvetica;
+	font-weight:normal;
 }
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
+
+a:link:active, a:visited:active { 
+    color: (internal value);
+}
+button {
+  font-family: arial;
+  color: #14396A !important;
+  font-size: 14px;
+  text-shadow: 1px 1px 0px #FFFFFF;
+  box-shadow: 1px 1px 1px #F29100;
+  padding: 10px 25px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #FF9900;
+  background: #FFFFFF;
+}
+button:hover {
+  color: #FF9900 !important;
+  background: #FFFF;
+}
+.testbale {
+	margin:0px;padding:0px;
+	width:60%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #f5f3f0;
+	-moz-border-radius-bottomleft:8px;
+	-webkit-border-bottom-left-radius:8px;
+	border-bottom-left-radius:8px;
+	
+	-moz-border-radius-bottomright:8px;
+	-webkit-border-bottom-right-radius:8px;
+	border-bottom-right-radius:8px;
+	
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-right-radius:8px;
+	border-top-right-radius:8px;
+	
+	-moz-border-radius-topleft:8px;
+	-webkit-border-top-left-radius:8px;
+	border-top-left-radius:8px;
+}.testbale table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.testbale tr:last-child td:last-child {
+	-moz-border-radius-bottomright:8px;
+	-webkit-border-bottom-right-radius:8px;
+	border-bottom-right-radius:8px;
+}
+.testbale table tr:first-child td:first-child {
+	-moz-border-radius-topleft:8px;
+	-webkit-border-top-left-radius:8px;
+	border-top-left-radius:8px;
+}
+.testbale table tr:first-child td:last-child {
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-right-radius:8px;
+	border-top-right-radius:8px;
+}.testbale tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:8px;
+	-webkit-border-bottom-left-radius:8px;
+	border-bottom-left-radius:8px;
+}.testbale tr:hover td{
+	
+}
+.testbale tr:nth-child(odd){ background-color:#f5f3f0; }
+.testbale tr:nth-child(even)    { background-color:#ffffff; }.testbale td{
+	vertical-align:middle;
+	border:1px solid #f5f3f0;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:16px;
+	font-size:15px;
+	font-family:Helvetica;
+	font-weight:normal;
+	color:#000000;
+}.testbale tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.testbale tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.testbale tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.testbale tr:first-child td{
+		background:-o-linear-gradient(bottom, #f5f3f0 5%, #f5f3f0 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f5f3f0), color-stop(1, #f5f3f0) );
+	background:-moz-linear-gradient( center top, #f5f3f0 5%, #f5f3f0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f3f0", endColorstr="#f5f3f0");	background: -o-linear-gradient(top,#f5f3f0,f5f3f0);
+
+	background-color:#f5f3f0;
+	border:0px solid #f5f3f0;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-family:Courier;
+	font-weight:bold;
+	color:#050000;
+}
+.testbale tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #f5f3f0 5%, #f5f3f0 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f5f3f0), color-stop(1, #f5f3f0) );
+	background:-moz-linear-gradient( center top, #f5f3f0 5%, #f5f3f0 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5f3f0", endColorstr="#f5f3f0");	background: -o-linear-gradient(top,#f5f3f0,f5f3f0);
+
+	background-color:#f5f3f0;
+}
+.testbale tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.testbale tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
 }
 .clearfix:after { clear: both }
-html { background-color: #DCDCDC}
+html { background-color: white }
 body {
     color: black;
     font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
@@ -1794,18 +1883,3 @@ body>#login #dont_have_an_account a {
     padding-bottom: 2px;
 }
 body>#login #dont_have_an_account a:hover { border-bottom: 2px solid #f90 }
-table{ border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}
-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
-table td,
-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}
-table td:first-child,table th:first-child{border-left-width:0}
-table thead{background:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}
-table td{background-color:ghostwhite}
-table th{background-color:lightgray}
-table-odd td{background-color:#f2f2f2}
-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}table-bordered td{border-bottom:1px solid #cbcbcb}table-bordered tbody>tr:last-child td,table-horizontal tbody>tr:last-child td{border-bottom-width:0}table-horizontal td,table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}table-horizontal tbody>tr:last-child td{border-bottom-width:0}
-
-
-
-
-</style>

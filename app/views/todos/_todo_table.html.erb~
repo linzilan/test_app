@@ -1,5 +1,5 @@
 <div id="todo_table">
-<% if @todos!="" %>
+<% if @todos.size>0 %>
        <div id="edit_form">
        </div>
 <table align="center">

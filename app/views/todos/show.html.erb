@@ -1,14 +1,16 @@
 <h1>Welcome to your todo list</h1>
 
 <%= link_to "Sign Out", :controller=>:users, :action=>:sign_out %>
-<h1>To do list</h1>
+<div id="login" class="wrap">
 <button id="add">Add a todo</button>
  <div id="add_form", style="display: none; ">
  <%=render partial: "add_form" %>
  </div>
+ </div>
  <div id="todo_table">
  <%= render partial: "todo_table" %>
  </div>
+ <br>
  <h4>Created by Zilan,Lin</h4>
 <script>
 $("#add").click(function(){
