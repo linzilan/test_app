@@ -15,7 +15,7 @@ class TodosController < ApplicationController
          after_parse=JSON.parse(data)
          @todos=after_parse
          Rails.logger.info @todos.inspect
-         if @todos["error"] #token conflict?
+         if @todos.size==1 && @todos[0]["error"] #token conflict?
              session[:user_id]=nil
              session[:token]=nil
              redirect_to :controller => :users, :action=> :index
@@ -46,6 +46,26 @@ class TodosController < ApplicationController
          format.js
       end
    end
+   
+   def move
+        Rails.logger.info "move....."
+        @todos=params[:all_todos]
+        Rails.logger.info @todos
+        move_id=params[:move_id].to_i
+        if params[:direction]=="up" && move_id!=0
+            tmp=@todos[move_id-1]
+            @todos[move_id-1]=@todos[move_id]
+            @todos[move_id]=tmp      
+        elsif params[:direction]=="down" && move_id!=@todos.size-1
+             tmp=@todos[move_id+1]
+            @todos[move_id+1]=@todos[move_id]
+            @todos[move_id]=tmp 
+        end           
+         respond_to do |format|
+         format.js
+      end   
+         
+   end   
    
    
    def add_todo

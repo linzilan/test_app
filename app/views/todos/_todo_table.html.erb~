@@ -1,37 +1,45 @@
-<div id="todo_table">
+<div id="todo_table" align="center">
 <% if @todos.size>0 %>
        <div id="edit_form">
        </div>
-<table align="center">
+       <br><br>
+<table align="center" class="testbale">
   <tr>
      <% if @asc=="false"%>
-        <th><%=link_to "Complete?", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>true%></th>
+        <th><%=link_to "Complete? ▼", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>true%></th>
     <%else %>
-        <th><%=link_to "Complete?", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>false%></th>
+        <th><%=link_to "Complete? ▲", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"is_complete", :asc=>false%></th>
     <% end %>
     
     <% if @asc=="false"%>
-       <th><%=link_to "ID", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>true%></th>
+       <th><%=link_to "ID ▼", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>true%></th>
      <%else %>
-       <th><%=link_to "ID", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>false%></th>
+       <th><%=link_to "ID ▲", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"id", :asc=>false%></th>
      <% end %>
      
      <% if @asc=="false"%>
-        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description",:asc=>true%></th>
+        <th><%=link_to "Description ▼", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description",:asc=>true%></th>
      <%else %>
-        <th><%=link_to "Description", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description", :asc=>false%></th>
+        <th><%=link_to "Description ▲", :remote=>"true", :action=>"order_show", :all_todos=>@todos, :order_by_what=>"description", :asc=>false%></th>
      <%end %>
         <th>Edit</th>
     
   </tr>
   
-  <% @todos.each do |todo| %>
+  <% @todos.each_with_index do |todo, index| %>
     <tr>
 
        <% if todo["is_complete"].to_s=="true"%>
-      <td>yes</td>
+      <td>
+      <%=link_to "▲", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"up"%>
+      <%=link_to "▼", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"down"%>
+      yes
+      </td>
       <% else %>
-       <td></td>
+       <td>
+      <%=link_to "▲", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"up"%>
+      <%=link_to "▼", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"down"%>
+       </td>
        <% end%>
       <td><%= todo["id"]%></td>
       <td><%= todo["description"]%></td>

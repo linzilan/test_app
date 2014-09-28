@@ -15,7 +15,8 @@ Rails.application.routes.draw do
         post :add_todo
         put :create
         get :show_detail
-        get :order_show
+        get :order_showc
+        get :move
     end
     end
     

@@ -26,13 +26,21 @@
     
   </tr>
   
-  <% @todos.each do |todo| %>
+  <% @todos.each_with_index do |todo, index| %>
     <tr>
 
        <% if todo["is_complete"].to_s=="true"%>
-      <td>yes</td>
+      <td>
+      <%=link_to "▲", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"up"%>
+      <%=link_to "▼", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"down"%>
+      yes
+      </td>
       <% else %>
-       <td></td>
+       <td>
+      <%=link_to "▲", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"up"%>
+      <%=link_to "▼", :remote=>"true", :action=>"move", :all_todos=>@todos, :move_id=>index,:direction=>"down"%>
+      No
+       </td>
        <% end%>
       <td><%= todo["id"]%></td>
       <td><%= todo["description"]%></td>
