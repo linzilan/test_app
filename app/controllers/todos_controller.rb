@@ -15,7 +15,7 @@ class TodosController < ApplicationController
          after_parse=JSON.parse(data)
          @todos=after_parse
          Rails.logger.info @todos.inspect
-         if @todos["error"] #token conflict?
+         if @todos[0]["error"] #token conflict?
              session[:user_id]=nil
              session[:token]=nil
              redirect_to :controller => :users, :action=> :index

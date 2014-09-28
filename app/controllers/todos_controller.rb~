@@ -19,7 +19,7 @@ class TodosController < ApplicationController
              session[:user_id]=nil
              session[:token]=nil
              redirect_to :controller => :users, :action=> :index
-         
+         end
    end   
      
    
