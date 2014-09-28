@@ -1,5 +1,5 @@
-<div id="edit_form", style="align='center;'">
-<%= form_tag :action => :create do %>
+<div id="edit_form">
+<%= form_tag({ :action => :create},{:id=>"edittodo", :onsubmit => "return validateFormEditTodo()"}) do %>
 
   <%= label_tag :description, 'Description: ' %><br>
   <%= text_field_tag :description, @description%><br>
@@ -11,3 +11,14 @@ is completed?
 
 <% end %>
 </div>
+
+<script>
+function validateFormEditTodo() {
+    var x = document.forms["todo"]["description"].value;
+    if (x == null || x == "") {
+        alert("Error: Description cannot be empty");
+        return false;
+    }
+   
+}
+</script>

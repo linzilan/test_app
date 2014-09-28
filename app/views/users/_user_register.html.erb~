@@ -1,10 +1,10 @@
 
+
+<%= form_tag( {:action => :create}, {:id=>"register_f", :onsubmit => "return validateFormRegister()"}) do %>
 <div class="avatar">
  <img src="http://cdn.ialireza.me/avatar.png">
 </div>
 <h2>Sign up</h2>
-<%= form_tag :action => :create do %>
-
   <%= label_tag :user, 'Email: ' %><br>
   <%= text_field_tag :user, "youremail@email.com" %><br>
 
@@ -15,3 +15,17 @@
 
 <% end %>
 
+<script>
+function validateForm_register() {
+    var x = document.forms["register_f"]["user"].value;
+    var y = document.forms["register_f"]["password"].value;
+    if (x == null || x == "") {
+        alert("Error: Email cannot be empty");
+        return false;
+    }
+        if (y == null || y == "") {
+        alert("Error: Your password cannot be empty");
+        return false;
+    }
+}
+</script>

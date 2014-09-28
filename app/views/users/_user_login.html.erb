@@ -1,5 +1,5 @@
 
-<%= form_tag :action => :login do %>
+<%= form_tag( {:action => :login} , {:id=>"login", :onsubmit => "return validateForm()"}) do %>
 <div class="avatar">
  <img src="http://cdn.ialireza.me/avatar.png">
 </div>
@@ -13,3 +13,17 @@
   <%= submit_tag 'Login' %>
 
 <% end %>
+<script>
+function validateForm() {
+    var x = document.forms["login"]["user"].value;
+    var y = document.forms["login"]["password"].value;
+    if (x == null || x == "") {
+        alert("Error: Email cannot be empty");
+        return false;
+    }
+        if (y == null || y == "") {
+        alert("Error: Your password cannot be empty");
+        return false;
+    }
+}
+</script>

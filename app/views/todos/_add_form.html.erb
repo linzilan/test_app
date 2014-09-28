@@ -1,5 +1,5 @@
 
-<%= form_tag :action => :add_todo do %>
+<%= form_tag({ :action => :add_todo},{:id=>"todo", :onsubmit => "return validateFormTodo()"}) do %>
 <h2>Add a todo to your list </h2>
   <%= label_tag :description, 'Description: ' %><br>
   <%= text_field_tag :description %><br>
@@ -8,3 +8,14 @@
   <%= submit_tag 'Submit' %>
 
 <% end %>
+
+<script>
+function validateFormTodo() {
+    var x = document.forms["todo"]["description"].value;
+    if (x == null || x == "") {
+        alert("Error: Description cannot be empty");
+        return false;
+    }
+   
+}
+</script>

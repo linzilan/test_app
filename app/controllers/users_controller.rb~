@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
             redirect_to:controller=>"todos" ,:action=>"show" 
           else
-             @error_message=after_parse["error"] #token conflict?
+             @error_message=after_parse["error"] 
              render "show_message"    
           end
 
