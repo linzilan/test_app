@@ -27,7 +27,7 @@ class UsersController < ApplicationController
          data = response.body
          after_parse=JSON.parse(data)
          Rails.logger.info after_parse
-         unless after_parse.size>1  
+         unless after_parse.size==1  
             @email=after_parse["email"]
             render "show_message_success" 
           else
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 
             redirect_to:controller=>"todos" ,:action=>"show" 
           else
-             @error_message=after_parse["error"]
+             @error_message=after_parse["error"] #token conflict?
              render "show_message"    
           end
 
